@@ -127,3 +127,69 @@ footer{padding:44px 0;border-top:1px solid var(--line);color:var(--muted)}
 .location-card:hover .location-cta{background:var(--blue);border-color:var(--blue);color:white}
 @media(max-width:980px){.services-photo{grid-template-columns:1fr 1fr}.location-list{grid-template-columns:1fr}.location-list .location-card:nth-child(odd),.location-list .location-card:nth-child(even){padding-left:0;padding-right:0;border-right:0}}
 @media(max-width:640px){.services-photo{grid-template-columns:1fr}.service-image{height:210px}.section-head-clean{padding-bottom:20px;margin-bottom:28px}.location-list .location-card{min-height:84px}.location-cta{padding:8px 11px;font-size:.7rem}}
+
+/* Professional static work gallery */
+.work-grid{display:grid;grid-template-columns:1.35fr 1fr 1fr;grid-template-rows:260px 260px;gap:14px}
+.work-shot{margin:0;position:relative;overflow:hidden;border:1px solid var(--line);border-radius:18px;background:#0a0f17;min-width:0}
+.work-shot-featured{grid-row:1/3}
+.work-shot-wide{grid-column:2/4}
+.work-shot img{width:100%;height:100%;object-fit:cover;filter:saturate(.92) contrast(1.03);transition:transform .35s ease,filter .35s ease}
+.work-shot::after{content:"";position:absolute;inset:38% 0 0;background:linear-gradient(180deg,transparent,rgba(3,6,10,.88));pointer-events:none}
+.work-shot figcaption{position:absolute;z-index:2;left:18px;right:18px;bottom:16px;display:flex;align-items:end;justify-content:space-between;gap:14px}
+.work-shot figcaption strong{font-size:1rem;letter-spacing:-.01em}
+.work-shot figcaption span{font-size:.76rem;color:#c1cad7;text-align:right}
+.work-shot:hover img{transform:scale(1.025);filter:saturate(1) contrast(1.04)}
+.work-note{display:flex;justify-content:space-between;align-items:center;gap:18px;margin-top:18px;padding-top:18px;border-top:1px solid var(--line);font-size:.82rem;color:var(--muted)}
+.work-note span{font-weight:700;color:#dce5f2}
+.work-note a{color:var(--blue2);font-weight:800;border-bottom:1px solid rgba(104,164,255,.35);padding-bottom:2px}
+.work-note a:hover{color:#fff;border-color:var(--blue2)}
+
+/* Small-screen polish */
+@media(max-width:980px){
+  .work-grid{grid-template-columns:1fr 1fr;grid-template-rows:360px 240px 240px}
+  .work-shot-featured{grid-column:1/3;grid-row:auto}
+  .work-shot-wide{grid-column:1/3}
+  .navlinks.open{max-height:calc(100dvh - 96px);overflow:auto}
+}
+@media(max-width:640px){
+  html{scroll-padding-top:78px}
+  .section{padding:62px 0}
+  .hero{padding-top:100px;padding-bottom:46px}
+  .hero h1{font-size:clamp(2.8rem,14vw,4.25rem);line-height:.92}
+  .hero-copy{line-height:1.65}
+  .hero-actions{display:grid;grid-template-columns:1fr;gap:10px}
+  .hero-actions .btn{width:100%}
+  .hero-card{padding:20px;border-radius:20px}
+  .stats{grid-template-columns:1fr;margin-top:26px}
+  .stats .stat:last-child{grid-column:auto}
+  .section-head h2,.location-hero h1{font-size:clamp(2.35rem,12vw,3.6rem);line-height:.96}
+  .section-head-clean{gap:16px}
+  .services-section,.work-section,.areas-section{padding-top:68px}
+  .service-image{height:190px}
+  .service-copy{padding:20px}
+  .work-grid{grid-template-columns:1fr 1fr;grid-template-rows:310px 190px 190px;gap:9px}
+  .work-shot{border-radius:13px}
+  .work-shot-featured{grid-column:1/3}
+  .work-shot-wide{grid-column:1/3}
+  .work-shot figcaption{left:12px;right:12px;bottom:11px;display:block}
+  .work-shot figcaption strong{font-size:.9rem}
+  .work-shot figcaption span{display:block;text-align:left;margin-top:3px;font-size:.68rem}
+  .work-note{align-items:flex-start;flex-direction:column;gap:8px}
+  .location-list .location-card{padding-top:19px;padding-bottom:19px;gap:12px}
+  .location-list .location-card b{font-size:1.08rem}
+  .location-cta{flex:0 0 auto}
+  .why{gap:16px}.why-media{min-height:280px;border-radius:18px}.why-panel{border-radius:18px;padding:20px}
+  .check{padding:13px}
+  .faq details{padding:16px}
+  .cta{border-radius:20px;padding:22px}
+  footer{padding:36px 0 100px}
+  .footer-links{gap:12px 16px}
+}
+@media(max-width:390px){
+  .container{width:min(100% - 22px,1180px)}
+  .brand-text span{display:none}
+  .brand-text strong{font-size:.86rem}
+  .work-grid{grid-template-rows:270px 165px 165px}
+  .location-cta{font-size:.65rem;padding:7px 9px}
+}
+@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important;animation:none!important}}
