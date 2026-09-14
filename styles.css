@@ -193,3 +193,6 @@ footer{padding:44px 0;border-top:1px solid var(--line);color:var(--muted)}
   .location-cta{font-size:.65rem;padding:7px 9px}
 }
 @media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important;animation:none!important}}
+/* Logo: preserve transparent artwork with its natural, unrounded silhouette */
+.brand img{width:76px;height:58px;object-fit:contain;border-radius:0;box-shadow:none;background:transparent}
+@media(max-width:640px){.brand img{width:64px;height:50px;border-radius:0}}
