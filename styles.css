@@ -234,3 +234,13 @@ header{background-color:rgba(5,7,11,.82)}
   .brand-text strong{font-size:.92rem;max-width:116px}
   .menu-btn{width:44px;height:44px;flex-basis:44px}
 }
+
+/* v6 logo: cleaner high-resolution crest supplied by client */
+@media(max-width:640px){
+  .brand img{width:88px;height:88px;flex-basis:88px}
+  .nav{height:92px}
+}
+@media(max-width:390px){
+  .brand img{width:82px;height:82px;flex-basis:82px}
+  .nav{height:88px}
+}
